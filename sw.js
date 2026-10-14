@@ -9,7 +9,7 @@
 // site instalado fica preso na versão antiga (foi o que aconteceu com o CSS
 // cache-first anterior: uma correção publicada não chegava a quem já tinha
 // o Service Worker instalado).
-var CACHE_NAME = 'cat-sertao-v21';
+var CACHE_NAME = 'cat-sertao-v22';
 var CACHE_ASSETS = [
   './',
   './index.html',
@@ -74,7 +74,7 @@ self.addEventListener('activate', function (e) {
   self.clients.claim();
 });
 
-// URL da raiz do escopo (ex.: https://aquinogr89.github.io/catsertao/) --
+// URL da raiz do escopo (ex.: https://aquinogr.github.io/catsertao/) --
 // comparar direto com "origin + '/'" nunca casava em GitHub Pages de
 // projeto, porque falta o "/catsertao/" do caminho: o fallback offline da
 // própria raiz do site ficava sem cobertura nenhuma.

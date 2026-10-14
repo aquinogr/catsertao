@@ -5,14 +5,14 @@ Corpo de Bombeiros Militar de Pernambuco): atendimento (assistente virtual),
 documentos técnicos, Termo de Compromisso, SATECs/postos de atendimento,
 Mapa de OCI — Ocupações de Combate a Incêndio (reserva técnica de incêndio/RTI,
 AVCB, caldeira etc., no site irmão
-[oci-catsertao](https://github.com/aquinogr89/oci-catsertao)), gestão de
+[oci-catsertao](https://github.com/aquinogr/moci-catsertao)), gestão de
 usuários e LOG de auditoria.
 
 Além da parte interna, o site publica duas **ferramentas de triagem abertas
 ao público**, sem login — ver a seção "Ferramentas de triagem públicas"
 abaixo.
 
-Publicado em: https://aquinogr89.github.io/catsertao/
+Publicado em: https://aquinogr.github.io/catsertao/
 
 ## Estrutura
 
@@ -67,7 +67,7 @@ conteúdo nenhum pra proteger. Ver a nota logo abaixo.
 > `registrarAcessoEventos` (via `CatAuth.api`) para registrar cada consulta
 > no LOG, no mesmo padrão de `obterTermo` → `acesso_termo`. Essa ação **ainda
 > não existe** no backend real (repositório
-> [oci-catsertao](https://github.com/aquinogr89/oci-catsertao), fora deste
+> [oci-catsertao](https://github.com/aquinogr/moci-catsertao), fora deste
 > repositório) — até ser adicionada lá (validar token, checar perfil,
 > gravar uma linha de LOG com `acao: 'acesso_eventos'`), a chamada só recebe
 > o "Ação inválida" padrão e é ignorada (`.catch()` vazio, não quebra a
@@ -102,7 +102,7 @@ conteúdo nenhum pra proteger. Ver a nota logo abaixo.
 >
 > - `apps-script/Code.gs` era o backend **antigo** do Termo de Compromisso
 >   (senha própria, autônomo), já substituído pelo backend unificado do
->   repositório [oci-catsertao](https://github.com/aquinogr89/oci-catsertao/tree/main/apps-script).
+>   repositório [oci-catsertao](https://github.com/aquinogr/moci-catsertao/tree/main/apps-script).
 >   Além de não ser mais chamado por ninguém, publicava o ID da planilha do
 >   Termo e tinha um contador de tentativas de login **global** (um errante
 >   trancava todo mundo).
@@ -204,11 +204,11 @@ No grupo "Ferramentas" do menu lateral, os links **"Mapa de OCI"**,
 são visíveis para **todos** os perfis logados e abrem em **nova aba** (os
 dois últimos são as páginas públicas descritas acima — aparecem no menu por
 conveniência, não porque exijam sessão). O mapa de OCI
-([oci-catsertao](https://aquinogr89.github.io/oci-catsertao/)) é público
+([oci-catsertao](https://aquinogr.github.io/moci-catsertao/)) é público
 para consulta, mas só cadastra ponto quem tem perfil autorizado — o site
 oci-catsertao revalida isso no próprio Apps Script a cada cadastro. Como
 os dois sites e as páginas utilitárias (`conta.html`, `usuarios.html`,
-`log.html`) ficam sob o mesmo domínio `aquinogr89.github.io`, o token de
+`log.html`) ficam sob o mesmo domínio `aquinogr.github.io`, o token de
 sessão (`sessionStorage`) é herdado automaticamente pela aba nova, mesmo
 sem passar por um novo login.
 
@@ -217,7 +217,7 @@ sem passar por um novo login.
 O backend fica no repositório **oci-catsertao**
 (`apps-script/Code.gs` + `apps-script/Auth.gs`), não neste. Siga o
 passo a passo completo lá:
-https://github.com/aquinogr89/oci-catsertao/blob/main/README.md
+https://github.com/aquinogr/moci-catsertao/blob/main/README.md
 
 Depois de implantar, copie a URL `/exec` gerada e cole em **dois lugares**:
 
@@ -229,8 +229,8 @@ Depois de implantar, copie a URL `/exec` gerada e cole em **dois lugares**:
 As duas constantes devem apontar para a **mesma URL** — é o mesmo backend.
 
 Também em `common.js`, a constante `TRIAGEM_URL` aponta para
-`https://aquinogr89.github.io/triagem-catsertao/` (repositório
-[triagem-catsertao](https://github.com/aquinogr89/triagem-catsertao)) —
+`https://aquinogr.github.io/triagem-catsertao/` (repositório
+[triagem-catsertao](https://github.com/aquinogr/triagem-catsertao)) —
 ajuste se a URL publicada for outra.
 
 > **Os dados de CNAE não moram neste repositório.** A classificação de risco
@@ -274,7 +274,7 @@ Nada se perdeu na operação, e isso foi verificado antes:
   foi preservado como patch em
   `Desktop\CAT SERTÃO\backup-clone-catsertao-14SET26\`.
 
-**A fonte de verdade é sempre o `origin`** (`github.com/aquinogr89/catsertao`).
+**A fonte de verdade é sempre o `origin`** (`github.com/aquinogr/catsertao`).
 Um clone local é descartável exatamente por isso. Se precisar de um clone novo,
 faça `git clone` — não procure cópias antigas pelo disco.
 

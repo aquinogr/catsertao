@@ -43,7 +43,7 @@ var CatAuth = (function () {
   // reverter isso antes do merge.
   var isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
   var RTI_URL = isLocalhost ? 'http://localhost:5501/' : 'https://catsertao.github.io/moci-catsertao/';
-  var TRIAGEM_URL = isLocalhost ? 'http://localhost:5502/' : 'https://aquinogr89.github.io/triagem-catsertao/';
+  var TRIAGEM_URL = isLocalhost ? 'http://localhost:5502/' : 'https://aquinogr.github.io/triagem-catsertao/';
 
   var session = null; // { token, login, perfil }
 
